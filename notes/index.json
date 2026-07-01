@@ -1,0 +1,49 @@
+{
+  "sections": [
+    {
+      "title": "Getting Started",
+      "files": [
+        "01-introduction.md"
+      ]
+    },
+    {
+      "title": "CSS Notes",
+      "files": [
+        "02-css.md"
+      ]
+    },
+    {
+      "title": "JavaScript Notes",
+      "files": [
+        "03-javascript.md"
+      ]
+    },
+    {
+      "title": "GraphQL Types",
+      "files": [
+        "graphql-types-scalars-enums-lists.md"
+      ]
+    },
+    {
+      "title": "GraphQL Notes",
+      "files": [
+        "graphql-mutation-explanation.md"
+      ]
+    },
+    {
+      "title": "GraphQL Mutations",
+      "files": [
+        "graphql-mutations-create-update-delete.md"
+      ]
+    },
+    {
+      "title": "Lecture: E04-E06 GraphQL",
+      "files": [
+        "e04-graphql-introduction.md",
+        "e05-graphql-schema.md",
+        "e06-graphql-requests.md",
+        "complete-graphql-example.md"
+      ]
+    }
+  ]
+}

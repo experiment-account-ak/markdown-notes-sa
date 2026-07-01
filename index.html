@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="A small localhost notes app that turns Markdown files into slides and scrollable notes."
+  />
+  <title>Markdown Notes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <header class="sidebar-header">
+        <div class="sidebar-brand">
+          <p class="eyebrow">LOCAL NOTES</p>
+          <h1>Markdown Slides</h1>
+        </div>
+
+        <div class="sidebar-actions">
+          <button
+            class="sidebar-icon"
+            id="theme-button"
+            type="button"
+            aria-label="Change theme"
+            title="Change theme"
+          >
+            ◐
+          </button>
+
+          <button
+            class="sidebar-icon"
+            id="fullscreen-button"
+            type="button"
+            aria-label="Enter fullscreen"
+            title="Fullscreen"
+          >
+            ⛶
+          </button>
+
+          <button
+            class="sidebar-icon"
+            id="close-sidebar-button"
+            type="button"
+            aria-label="Close sidebar"
+            title="Close sidebar"
+          >
+            ×
+          </button>
+        </div>
+      </header>
+
+      <div class="sidebar-tools">
+        <label class="search">
+          <span aria-hidden="true">⌕</span>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Search notes..."
+            autocomplete="off"
+          />
+        </label>
+      </div>
+
+      <nav
+        id="slide-navigation"
+        class="slide-navigation"
+        aria-label="Note navigation"
+      ></nav>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button
+          class="open-sidebar-button"
+          id="open-sidebar-button"
+          type="button"
+          aria-label="Open sidebar"
+          title="Open sidebar"
+        >
+          ☰
+        </button>
+
+        <div class="topbar-meta">
+          <p id="section-label" class="eyebrow">SECTION</p>
+          <p id="slide-title">Loading…</p>
+        </div>
+      </header>
+
+      <section class="stage" aria-live="polite">
+        <article id="slide" class="slide">
+          <p>Loading notes…</p>
+        </article>
+      </section>
+
+      <footer class="controls">
+        <button
+          id="previous-button"
+          class="control-button"
+          type="button"
+          aria-label="Previous note"
+          title="Previous note"
+        >
+          ‹
+        </button>
+
+        <span id="slide-counter" class="slide-counter">0 / 0</span>
+
+        <button
+          id="next-button"
+          class="control-button"
+          type="button"
+          aria-label="Next note"
+          title="Next note"
+        >
+          ›
+        </button>
+      </footer>
+    </main>
+  </div>
+
+  <script src="markdown.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
