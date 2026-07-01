@@ -1,24 +1,6 @@
 {
   "sections": [
     {
-      "title": "Getting Started",
-      "files": [
-        "01-introduction.md"
-      ]
-    },
-    {
-      "title": "CSS Notes",
-      "files": [
-        "02-css.md"
-      ]
-    },
-    {
-      "title": "JavaScript Notes",
-      "files": [
-        "03-javascript.md"
-      ]
-    },
-    {
       "title": "GraphQL Types",
       "files": [
         "graphql-types-scalars-enums-lists.md"
