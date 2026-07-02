@@ -1,31 +1,5 @@
 # Lecture E02: REST — Complete Lecture Notes
 
-[Source chat](https://chatgpt.com/g/g-p-6a295be0712c8191a00e1149bb7206ea/c/6a3301a8-9c04-83ed-bff8-89998dc1c7cc)
-
-## Quick Navigation
-
-- [Central Mental Model](#central-mental-model)
-- [1. What Is REST and Why Was It Developed?](#1-what-is-rest-and-why-was-it-developed)
-- [2. How Ordinary WWW Communication Works](#2-how-ordinary-www-communication-works)
-- [3. The Basic Idea of REST](#3-the-basic-idea-of-rest)
-- [4. The Five REST Principles](#4-the-five-rest-principles)
-- [5. Unique Identification Through URIs](#5-unique-identification-through-uris)
-- [6. Uniform and Restricted Interface](#6-uniform-and-restricted-interface)
-- [7. Safe and Idempotent HTTP Methods](#7-safe-and-idempotent-http-methods)
-- [8. Resource Versus Representation](#8-resource-versus-representation)
-- [9. HATEOAS and Hypermedia Links](#9-hateoas-and-hypermedia-links)
-- [10. Statelessness](#10-statelessness)
-- [11. All Five Principles in One Example](#11-all-five-principles-in-one-example)
-- [12. Complete Technical Mapping](#12-complete-technical-mapping)
-- [13. Website Versus Web Service](#13-website-versus-web-service)
-- [14. What Exactly Is a Web Service?](#14-what-exactly-is-a-web-service)
-- [15. How Websites and Web Services Work Together](#15-how-websites-and-web-services-work-together)
-- [16. REST Versus HTTP](#16-rest-versus-http)
-- [17. What Does It Mean That REST Abstracts Away from HTTP?](#17-what-does-it-mean-that-rest-abstracts-away-from-http)
-- [18. Why Is REST Needed If HTTP Already Exists?](#18-why-is-rest-needed-if-http-already-exists)
-- [19. Final Exam-Ready Questions](#19-final-exam-ready-questions)
-- [20. Final Memory Maps](#20-final-memory-maps)
-
 # Central Mental Model
 
 This lecture explains how to design a web service according to the same basic principles that made the World Wide Web successful.
@@ -45,7 +19,6 @@ A REST service is like a city containing identifiable places.
 | Hypermedia link | A road sign showing where to go next | A link to another resource or possible action | `/todos/42/comments` |
 | Statelessness | The traveller remembers the journey, not the city | Each request contains the information needed to process it | URI, method, authentication, headers, and input |
 
-The lecture begins with ordinary Web communication and then introduces five REST principles.
 
 ==★ **REST identifies resources with URIs, manipulates them through standard operations, exchanges representations, connects resources through links, and keeps application state on the client.**==
 
