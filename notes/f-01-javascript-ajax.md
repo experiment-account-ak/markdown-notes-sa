@@ -30,9 +30,7 @@ The complete idea to remember is:
 
 > **Event → JavaScript handler → asynchronous HTTP request → server data → DOM update**
 
----
-
-## Lecture map
+# Lecture map
 
 The lecture follows this progression:
 
@@ -44,9 +42,7 @@ The lecture follows this progression:
 6. How `XMLHttpRequest` is used for GET and POST requests.
 7. What AJAX improves and what limitations remain.
 
----
-
-## 1. What is a classic multi-page application?
+# 1. What is a classic multi-page application ❓
 
 The Web is fundamentally based on a **request-response cycle**:
 
@@ -59,7 +55,7 @@ A traditional web application that works mainly by loading new HTML pages is cal
 
 ## MPA basic principle
 
-![MPA basic request-response cycle](images/ajax/mpa-basic-request-response.png)
+> **IMAGE PLACEHOLDER:** MPA basic request-response cycle
 
 The sequence diagram on page 6 shows:
 
@@ -103,11 +99,10 @@ Most work remains on the server:
 
 The distribution diagram on pages 8-9 therefore describes the browser as a **thin client**. It displays what the server provides but performs relatively little application logic itself.
 
----
 
-## 2. Why is the classic MPA cycle problematic for interactive components?
+# 2. Why is the classic MPA cycle problematic for interactive components ❓
 
-## Exam-style question: What would happen if autocomplete were implemented as a classic MPA interaction?
+## What would happen if autocomplete were implemented as a classic MPA interaction❓
 
 Consider a search suggestion list that should update after every typed letter.
 
@@ -141,7 +136,7 @@ For example, after sending `sing`, the newly generated page must still display `
 
 ---
 
-## 3. What did web applications need from desktop applications?
+# 3. What did web applications need from desktop applications❓
 
 Desktop applications normally provide:
 
@@ -157,9 +152,7 @@ To provide a similar experience in a browser, two capabilities are required:
 
 AJAX provides this combination.
 
----
-
-## 4. What is AJAX?
+# 4. What is AJAX❓
 
 **AJAX** stands for:
 
@@ -184,9 +177,8 @@ AJAX combines several client-side technologies:
 
 The name includes XML for historical reasons, but AJAX is **not restricted to XML**. The lecture examples use JSON.
 
----
 
-## 5. How does an AJAX interaction work?
+# 5. How does an AJAX interaction work❓
 
 > **IMAGE PLACEHOLDER:** AJAX request, JSON response and DOM update
 
@@ -212,7 +204,7 @@ Suppose the user types inside a search field:
 5. JavaScript modifies the DOM.
 6. Only the relevant part of the page changes.
 
-## What does “asynchronous” mean here?
+## What does “asynchronous” mean here❓
 
 It does **not** mean that the response arrives instantly.
 
@@ -222,9 +214,7 @@ It means:
 
 The user can continue viewing or interacting with the page while the request is in progress.
 
----
-
-## 6. What is the DOM?
+# 6. What is the DOM❓
 
 The **Document Object Model**, or **DOM**, is the data structure in which the browser manages an HTML document.
 
@@ -288,9 +278,7 @@ Important relationships include:
 
 AJAX uses this structure because JavaScript can update a single branch without requesting and rendering a completely new page.
 
----
-
-## 7. What are browser events and event handlers?
+# 7. What are browser events and event handlers❓
 
 An **event** represents something that happens in the browser.
 
@@ -346,9 +334,7 @@ This is an example of **Inversion of Control**:
 > Your code does not continuously ask whether the button was clicked.  
 > The browser calls your function when the click occurs.
 
----
-
-## 8. Which technologies can perform asynchronous communication?
+# 8. Which technologies can perform asynchronous communication❓
 
 The lecture presents two native browser APIs:
 
@@ -364,9 +350,7 @@ The lecture concentrates on `XMLHttpRequest`.
 
 The Fetch API is identified as the newer alternative, but the PDF does not contain a Fetch code example; it only refers to a separate video.
 
----
-
-## 9. What is `XMLHttpRequest`?
+# 9. What is `XMLHttpRequest`❓
 
 `XMLHttpRequest`, commonly abbreviated as **XHR**, is the classic browser API for transferring data between a browser and a server.
 
@@ -382,9 +366,7 @@ An XHR interaction uses an object created in JavaScript:
 let xhr = new XMLHttpRequest();
 ```
 
----
-
-## 10. Important `XMLHttpRequest` functions
+# 10. Important `XMLHttpRequest` functions
 
 ## `open()`
 
@@ -417,9 +399,7 @@ For a POST request with data:
 xhr.send(JSON.stringify(todo));
 ```
 
----
-
-## 11. Important `XMLHttpRequest` properties
+# 11. Important `XMLHttpRequest` properties
 
 | Property | Purpose |
 |---|---|
@@ -441,9 +421,7 @@ After the response arrives, the converted value is available through:
 xhr.response
 ```
 
----
-
-## 12. Important `XMLHttpRequest` events
+# 12. Important `XMLHttpRequest` events
 
 After a request is sent, the XHR object produces events describing what happened.
 
@@ -463,9 +441,7 @@ xhr.onload = () => {
 
 The function is not called immediately. The browser calls it after the response has arrived.
 
----
-
-## 13. Code example 1: GET request with XHR
+# 13. Code example 1: GET request with XHR
 
 This example loads a list of todos from the server and inserts them into the current page.
 
@@ -488,7 +464,7 @@ This example loads a list of todos from the server and inserts them into the cur
 </html>
 ```
 
-## What does the HTML do?
+## What does the HTML do❓
 
 ```html
 <ul id="list"></ul>
@@ -647,9 +623,7 @@ The important result is:
 
 > The browser does not replace the whole page. It changes only the contents of the `<ul>` element.
 
----
-
-## 14. Code example 2: POST request with XHR
+# 14. Code example 2: POST request with XHR
 
 This example reads a title from an input field and sends a new todo to the server.
 
@@ -827,9 +801,7 @@ Todo created!
 
 to the developer console.
 
----
-
-## 15. GET and POST example comparison
+# 15. GET and POST example comparison
 
 | Aspect | GET example | POST example |
 |---|---|---|
@@ -860,9 +832,7 @@ Handle the load event
 Process the response or update the DOM
 ```
 
----
-
-## 16. What are the advantages of AJAX?
+# 16. What are the advantages of AJAX❓
 
 ## Better user experience
 
@@ -882,9 +852,7 @@ The browser updates only the relevant part instead of rebuilding the entire page
 
 The server can return only the required data, such as JSON, rather than repeatedly transferring a complete HTML page with its surrounding layout.
 
----
-
-## 17. How does AJAX change the distribution of tasks?
+# 17. How does AJAX change the distribution of tasks❓
 
 > **IMAGE PLACEHOLDER:** Comparison of MPA and MPA with AJAX
 
@@ -923,9 +891,7 @@ This causes **fragmentation**:
 
 > Some presentation logic and HTML generation exist on the server, while other presentation logic and HTML generation exist in the browser.
 
----
-
-## 18. What limitations remain in an MPA with AJAX?
+# 18. What limitations remain in an MPA with AJAX❓
 
 AJAX improves individual interactions, but it does not automatically turn an MPA into a completely different application architecture.
 
@@ -951,9 +917,7 @@ Therefore:
 
 The lecture has not yet introduced single-page application architecture; AJAX is the intermediate step that makes an MPA more interactive.
 
----
-
-## Exam-ready comparison
+# Exam-ready comparison
 
 | Characteristic | Classic MPA | MPA with AJAX |
 |---|---|---|
@@ -967,9 +931,8 @@ The lecture has not yet introduced single-page application architecture; AJAX is
 | Navigation between complete pages | Reload | Usually still reload |
 | Main advantage | Simple request-response model | More responsive interaction |
 
----
 
-## Core definitions to memorize
+# Core definitions!
 
 **MPA:**  
 A web application in which navigation and user actions commonly load separate HTML pages through request-response cycles.
@@ -992,9 +955,7 @@ The classic browser API for asynchronous HTTP communication.
 **Asynchronous:**  
 The request is processed while the page remains usable; the response is handled later by a callback or event handler.
 
----
-
-## One complete mental walkthrough
+# Walkthrough
 
 Suppose the user presses the **Load** button:
 
