@@ -36,6 +36,15 @@
           "title": "GraphQL Types: Scalars, Enums, Lists, and Non-Null"
         }
       ]
+    },
+    {
+      "title": "Lecture: E02 REST",
+      "files": [
+        {
+          "file": "e02-rest-lecture.md",
+          "title": "Lecture: E02 REST"
+        }
+      ]
     }
   ]
 }
