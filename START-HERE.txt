@@ -1,0 +1,27 @@
+MARKDOWN NOTES — START HERE
+===========================
+
+EASIEST WAY
+
+1. Open a terminal in this folder.
+2. Run:
+
+   Windows:  py manage_notes.py
+   macOS/Linux:  python3 manage_notes.py
+
+The script now does everything for you:
+
+- Starts the local web server
+- Opens the app in your browser
+- Shows a terminal menu for managing notes
+
+Keep the terminal open while using the app. Choosing "Exit and stop server"
+stops the web server safely.
+
+You can also use the launchers:
+
+- Windows: START-NOTES.bat
+- macOS/Linux: ./start-notes.sh
+
+The menu supports add, rename, move, reorder, delete, section management,
+project checks, and reopening the app in the browser.

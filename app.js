@@ -111,17 +111,26 @@
         slides: []
       };
 
-      for (const file of sectionConfig.files) {
+      for (const noteConfig of sectionConfig.files) {
+        const file = typeof noteConfig === "string"
+          ? noteConfig
+          : noteConfig.file;
+        const customTitle = typeof noteConfig === "object" && noteConfig !== null
+          && typeof noteConfig.title === "string"
+          ? noteConfig.title.trim()
+          : "";
         const markdown = await loadText(`notes/${file}`);
         const markdownSlides = splitMarkdownIntoSlides(markdown);
 
         markdownSlides.forEach((content, localIndex) => {
           const slide = {
             sectionTitle: section.title,
-            title: getSlideTitle(
-              content,
-              `${section.title} ${localIndex + 1}`
-            ),
+            title: localIndex === 0 && customTitle
+              ? customTitle
+              : getSlideTitle(
+                  content,
+                  `${section.title} ${localIndex + 1}`
+                ),
             markdown: content,
             searchableText: stripMarkdown(content),
             file

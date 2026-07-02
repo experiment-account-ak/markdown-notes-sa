@@ -2,26 +2,115 @@
 
 A small dependency-free localhost notes app that loads Markdown files and displays them as slides or continuous scrollable topics.
 
-## Run locally
+## Start the app and terminal manager
 
-Open a terminal inside this folder:
+Open a terminal inside this folder and run:
 
 ```bash
-python -m http.server 8000
+python manage_notes.py
 ```
 
-Then open:
+On Windows, this may be:
 
-```text
-http://localhost:8000
+```powershell
+py manage_notes.py
 ```
 
-Do not open `index.html` directly with `file://`, because the browser will block loading the Markdown files.
+This is now the recommended way to run the project. It automatically:
 
-## Files
+1. Starts the local web server.
+2. Opens the app in your default browser.
+3. Keeps an interactive management menu in the terminal.
+
+The server remains active while the menu is open. Choose **Exit and stop
+server** when you are finished. If port `8000` is already occupied, the script
+tries the next available port automatically.
+
+Convenience launchers are also included:
+
+- Windows: double-click `START-NOTES.bat`.
+- macOS/Linux: run `./start-notes.sh`.
+
+## Terminal menu
+
+The menu includes:
+
+- Add a Markdown note.
+- Rename its sidebar name.
+- Optionally rename the stored `.md` filename.
+- Move a note to a different or new section.
+- Reorder notes inside a section.
+- Delete a note and optionally its Markdown file.
+- Rename, reorder, or delete sections.
+- List the complete structure.
+- Check for missing, duplicate, or unregistered Markdown files.
+- Reopen the browser.
+
+After changing the structure, refresh the browser to see the update.
+
+## Add a note
+
+Choose **Add note** in the menu. The program asks you to drag a Markdown file
+into the terminal or paste its path. It then asks for:
+
+1. The name displayed in the sidebar.
+2. An existing section or a new section.
+3. The note's position inside that section.
+
+The source file is copied into `notes/`, its filename is normalized for the
+web, and `notes/index.json` is updated safely. A backup is kept at
+`notes/index.json.bak`.
+
+The display name is independent from the stored filename. For example:
+
+```json
+{
+  "file": "e04-graphql-introduction.md",
+  "title": "GraphQL for Beginners"
+}
+```
+
+Old filename-only entries continue to work:
+
+```json
+"e04-graphql-introduction.md"
+```
+
+## Individual commands
+
+The same features can be launched directly:
+
+```bash
+python manage_notes.py serve
+python manage_notes.py add ~/Downloads/my-note.md
+python manage_notes.py list
+python manage_notes.py rename
+python manage_notes.py move
+python manage_notes.py reorder
+python manage_notes.py delete
+python manage_notes.py rename-section
+python manage_notes.py reorder-sections
+python manage_notes.py delete-section
+python manage_notes.py check
+```
+
+Useful server options:
+
+```bash
+python manage_notes.py --port 9000
+python manage_notes.py --no-browser
+```
+
+`serve` starts only the web server. Press `Ctrl+C` to stop it. Running the
+script without a command starts both the server and interactive menu.
+
+## Project files
 
 ```text
-markdown-notes-complete-updated/
+markdown-notes/
+├── manage_notes.py
+├── START-NOTES.bat
+├── start-notes.sh
 ├── index.html
 ├── styles.css
 ├── markdown.js
@@ -29,23 +118,7 @@ markdown-notes-complete-updated/
 ├── README.md
 └── notes/
     ├── index.json
-    ├── 01-introduction.md
-    ├── 02-css.md
-    ├── 03-javascript.md
-    └── graphql-mutation-explanation.md
-```
-
-## Add a Markdown file
-
-Create the file inside `notes/`, then add it to `notes/index.json`.
-
-```json
-{
-  "title": "GraphQL Notes",
-  "files": [
-    "graphql-mutation-explanation.md"
-  ]
-}
+    └── *.md
 ```
 
 ## One scrollable topic

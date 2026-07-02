@@ -2,12 +2,7 @@
   "sections": [
     {
       "title": "GraphQL Notes",
-      "files": [
-        {
-          "file": "trial.md",
-          "title": "Trial"
-        }
-      ]
+      "files": []
     },
     {
       "title": "GraphQL Mutations",
