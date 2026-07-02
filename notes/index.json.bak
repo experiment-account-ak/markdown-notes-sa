@@ -43,6 +43,19 @@
         {
           "file": "e02-rest-lecture.md",
           "title": "Lecture: E02 REST"
+        },
+        {
+          "file": "e02-rest-complete.md",
+          "title": "E02- Elaborated"
+        }
+      ]
+    },
+    {
+      "title": "F01-F03",
+      "files": [
+        {
+          "file": "f01-ajax-complete.md",
+          "title": "F01-F03"
         }
       ]
     }
