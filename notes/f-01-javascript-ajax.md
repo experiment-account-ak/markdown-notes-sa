@@ -32,7 +32,7 @@ The complete idea to remember is:
 
 ---
 
-# Lecture map
+## Lecture map
 
 The lecture follows this progression:
 
@@ -46,7 +46,7 @@ The lecture follows this progression:
 
 ---
 
-# 1. What is a classic multi-page application?
+## 1. What is a classic multi-page application?
 
 The Web is fundamentally based on a **request-response cycle**:
 
@@ -105,7 +105,7 @@ The distribution diagram on pages 8-9 therefore describes the browser as a **thi
 
 ---
 
-# 2. Why is the classic MPA cycle problematic for interactive components?
+## 2. Why is the classic MPA cycle problematic for interactive components?
 
 ## Exam-style question: What would happen if autocomplete were implemented as a classic MPA interaction?
 
@@ -141,7 +141,7 @@ For example, after sending `sing`, the newly generated page must still display `
 
 ---
 
-# 3. What did web applications need from desktop applications?
+## 3. What did web applications need from desktop applications?
 
 Desktop applications normally provide:
 
@@ -159,7 +159,7 @@ AJAX provides this combination.
 
 ---
 
-# 4. What is AJAX?
+## 4. What is AJAX?
 
 **AJAX** stands for:
 
@@ -186,7 +186,7 @@ The name includes XML for historical reasons, but AJAX is **not restricted to XM
 
 ---
 
-# 5. How does an AJAX interaction work?
+## 5. How does an AJAX interaction work?
 
 > **IMAGE PLACEHOLDER:** AJAX request, JSON response and DOM update
 
@@ -224,7 +224,7 @@ The user can continue viewing or interacting with the page while the request is 
 
 ---
 
-# 6. What is the DOM?
+## 6. What is the DOM?
 
 The **Document Object Model**, or **DOM**, is the data structure in which the browser manages an HTML document.
 
@@ -290,7 +290,7 @@ AJAX uses this structure because JavaScript can update a single branch without r
 
 ---
 
-# 7. What are browser events and event handlers?
+## 7. What are browser events and event handlers?
 
 An **event** represents something that happens in the browser.
 
@@ -348,7 +348,7 @@ This is an example of **Inversion of Control**:
 
 ---
 
-# 8. Which technologies can perform asynchronous communication?
+## 8. Which technologies can perform asynchronous communication?
 
 The lecture presents two native browser APIs:
 
@@ -366,7 +366,7 @@ The Fetch API is identified as the newer alternative, but the PDF does not conta
 
 ---
 
-# 9. What is `XMLHttpRequest`?
+## 9. What is `XMLHttpRequest`?
 
 `XMLHttpRequest`, commonly abbreviated as **XHR**, is the classic browser API for transferring data between a browser and a server.
 
@@ -384,7 +384,7 @@ let xhr = new XMLHttpRequest();
 
 ---
 
-# 10. Important `XMLHttpRequest` functions
+## 10. Important `XMLHttpRequest` functions
 
 ## `open()`
 
@@ -419,7 +419,7 @@ xhr.send(JSON.stringify(todo));
 
 ---
 
-# 11. Important `XMLHttpRequest` properties
+## 11. Important `XMLHttpRequest` properties
 
 | Property | Purpose |
 |---|---|
@@ -443,7 +443,7 @@ xhr.response
 
 ---
 
-# 12. Important `XMLHttpRequest` events
+## 12. Important `XMLHttpRequest` events
 
 After a request is sent, the XHR object produces events describing what happened.
 
@@ -465,7 +465,7 @@ The function is not called immediately. The browser calls it after the response 
 
 ---
 
-# 13. Code example 1: GET request with XHR
+## 13. Code example 1: GET request with XHR
 
 This example loads a list of todos from the server and inserts them into the current page.
 
@@ -649,7 +649,7 @@ The important result is:
 
 ---
 
-# 14. Code example 2: POST request with XHR
+## 14. Code example 2: POST request with XHR
 
 This example reads a title from an input field and sends a new todo to the server.
 
@@ -829,7 +829,7 @@ to the developer console.
 
 ---
 
-# 15. GET and POST example comparison
+## 15. GET and POST example comparison
 
 | Aspect | GET example | POST example |
 |---|---|---|
@@ -862,7 +862,7 @@ Process the response or update the DOM
 
 ---
 
-# 16. What are the advantages of AJAX?
+## 16. What are the advantages of AJAX?
 
 ## Better user experience
 
@@ -884,7 +884,7 @@ The server can return only the required data, such as JSON, rather than repeated
 
 ---
 
-# 17. How does AJAX change the distribution of tasks?
+## 17. How does AJAX change the distribution of tasks?
 
 > **IMAGE PLACEHOLDER:** Comparison of MPA and MPA with AJAX
 
@@ -925,7 +925,7 @@ This causes **fragmentation**:
 
 ---
 
-# 18. What limitations remain in an MPA with AJAX?
+## 18. What limitations remain in an MPA with AJAX?
 
 AJAX improves individual interactions, but it does not automatically turn an MPA into a completely different application architecture.
 
@@ -953,7 +953,7 @@ The lecture has not yet introduced single-page application architecture; AJAX is
 
 ---
 
-# Exam-ready comparison
+## Exam-ready comparison
 
 | Characteristic | Classic MPA | MPA with AJAX |
 |---|---|---|
@@ -969,7 +969,7 @@ The lecture has not yet introduced single-page application architecture; AJAX is
 
 ---
 
-# Core definitions to memorize
+## Core definitions to memorize
 
 **MPA:**  
 A web application in which navigation and user actions commonly load separate HTML pages through request-response cycles.
@@ -994,7 +994,7 @@ The request is processed while the page remains usable; the response is handled 
 
 ---
 
-# One complete mental walkthrough
+## One complete mental walkthrough
 
 Suppose the user presses the **Load** button:
 
@@ -1014,16 +1014,3 @@ Suppose the user presses the **Load** button:
 14. The user sees the todo list without a page reload.
 
 That single sequence connects almost every important concept in the lecture.
-
-## Lecture and diagram files
-
-- [F-01 JavaScript AJAX lecture](sandbox:/mnt/data/F-01-javascript-ajax_en.pdf)
-- [MPA basic principle - PlantUML](sandbox:/mnt/data/MPAS%20BASIC%20PRINCIPLE.puml)
-- [Web applications with AJAX - PlantUML](sandbox:/mnt/data/WEB%20APPLICATIONS%20WITH%20AJAX.puml)
-- [AJAX sequence - PlantUML](sandbox:/mnt/data/ajax-sequence.puml)
-- [AJAX non-blocking sequence - PlantUML](sandbox:/mnt/data/ajax-non-blocking.puml)
-
-
-
----
-Powered by [ChatGPT Exporter](https://www.chatgptexporter.com)
