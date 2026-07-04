@@ -76,6 +76,10 @@
         {
           "file": "f02-client-side-rendering-questions.md",
           "title": "Rendering Approach- Client-Side Rendering"
+        },
+        {
+          "file": "f02-hybrid-ssr-questions.md",
+          "title": "Rendering approach - Hybrid Approach and Server-Side Rendering"
         }
       ]
     }

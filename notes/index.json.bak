@@ -72,6 +72,10 @@
         {
           "file": "rendering-approach-static-rendering.md",
           "title": "Rendering Approach- Static Rendering"
+        },
+        {
+          "file": "f02-client-side-rendering-questions.md",
+          "title": "Rendering Approach- Client-Side Rendering"
         }
       ]
     }
