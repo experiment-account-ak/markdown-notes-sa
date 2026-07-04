@@ -55,7 +55,7 @@
       "files": [
         {
           "file": "f-01-javascript-ajax.md",
-          "title": "F-01-javascript-ajax"
+          "title": "F-01: Javascript AJAX"
         },
         {
           "file": "f01-ajax-additional-questions.md",
@@ -76,6 +76,14 @@
         {
           "file": "f02-client-side-rendering-questions.md",
           "title": "Rendering Approach- Client-Side Rendering"
+        },
+        {
+          "file": "f02-hybrid-ssr-questions.md",
+          "title": "Rendering approach - Hybrid Approach and Server-Side Rendering"
+        },
+        {
+          "file": "f03-javascript-modularization.md",
+          "title": "F-03: Javascript Modularization"
         }
       ]
     }
