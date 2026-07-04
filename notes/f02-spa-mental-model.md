@@ -8,8 +8,6 @@ A **Single Page Application (SPA)** is best understood as:
 
 In a classic website, every major user action often asks the server for a **new HTML page**. In an SPA, the browser first downloads the app, usually one HTML page plus lots of JavaScript/CSS/images. After that, the page is **not reloaded**. Instead, JavaScript changes the visible page by manipulating the **DOM**, and the server is contacted mainly for **data** or **business logic**, often asynchronously via AJAX. This is the central idea of the lecture. `F-02-javascript-spas_en.pdf`
 
----
-
 # 1. What is an SPA?
 
 The lecture defines an SPA as an application delivered to the browser that **does not reload the page during use**. `F-02-javascript-spas_en.pdf`
@@ -24,8 +22,6 @@ Think of it like this:
 
 A simple example is **Google Docs**. When you type in a document, the whole page does not reload. The browser updates the document area, toolbar state, cursor position, etc., while background communication with the server saves or syncs data.
 
----
-
 # 2. Why do SPAs exist?
 
 The lecture gives three main goals:
@@ -39,7 +35,6 @@ The lecture gives three main goals:
 3. **Offline capability, especially for mobile use**  
    Since much of the application is already on the client, parts of the app may continue working without constant server communication. `F-02-javascript-spas_en.pdf`
 
----
 
 # 3. SPA request flow: what happens step by step?
 
@@ -73,7 +68,6 @@ The key idea is: **the page stays alive; only parts of it change.**
 
 > **IMAGE PLACEHOLDER:** SPA request flow sequence diagram
 
----
 
 # 4. Exam question: What are the main features of an SPA?
 
@@ -91,7 +85,6 @@ The lecture lists three important SPA features:
 
    Example: a todo app may already have the UI in the browser, but it asks the server for the todo list data. `F-02-javascript-spas_en.pdf`
 
----
 
 # 5. MPA vs SPA: distribution of tasks
 
@@ -128,7 +121,6 @@ This is why the lecture says SPAs use a **rich client** or **fat client**. The b
 
 > **IMAGE PLACEHOLDER:** MPA vs SPA task distribution component diagram
 
----
 
 # 6. Important term: Rich client / fat client
 
@@ -145,7 +137,6 @@ In an SPA, the browser may handle:
 
 Older terminology for such applications is **Rich Internet Application**, or **RIA**. The lecture says SPAs implement the client part using JavaScript. `F-02-javascript-spas_en.pdf`
 
----
 
 # 7. Key challenges of SPAs
 
@@ -197,7 +188,6 @@ Search engines may have difficulty with JavaScript-heavy applications if they ca
 
 The lecture humorously lists JavaScript as a challenge. The point is that larger JavaScript applications can become complex and need structure. `F-02-javascript-spas_en.pdf`
 
----
 
 # 8. Exam question: Why is a pure SPA not always the right choice?
 
@@ -217,7 +207,6 @@ So the lecture introduces **architectural variants**. The central question becom
 
 That means: is the final HTML constructed on the server, during build time, in the browser, or through a combination? `F-02-javascript-spas_en.pdf`
 
----
 
 # 9. Performance metrics: TTFB, FCP, TTI
 
@@ -237,7 +226,6 @@ A blog should probably optimize fast visible content and SEO.
 
 An online editor may care more about interactivity after loading.
 
----
 
 # 10. Rendering approaches
 
@@ -250,7 +238,6 @@ The lecture discusses four main rendering approaches:
    - server-side rendering,
    - CSR with prerendering.
 
----
 
 # 11. Server rendering
 
@@ -278,7 +265,6 @@ Disadvantage:
 
 > **IMAGE PLACEHOLDER:** Server rendering simple flow diagram
 
----
 
 # 12. Static rendering
 
@@ -310,7 +296,6 @@ Disadvantages:
 - Less suitable for highly interactive or personalized apps such as online banking or games.
 - Updating content requires a new build and deployment. `F-02-javascript-spas_en.pdf`
 
----
 
 # 13. Client-side rendering
 
@@ -334,7 +319,6 @@ The server does not send the final full HTML view. The browser builds the view a
 
 CSR has the SPA advantages already discussed, but also the initial-load and SEO challenges. `F-02-javascript-spas_en.pdf`
 
----
 
 # 14. Hybrid approach: Server-Side Rendering
 
@@ -367,7 +351,6 @@ Then JavaScript loads and attaches behavior:
 
 That process is **rehydration**.
 
----
 
 # 15. Code used in the lecture: SSR example
 
@@ -468,7 +451,6 @@ Challenges:
 - TTFB and TTI depend heavily on implementation quality.
 - Worst case: rehydration fails, and the page looks complete but is not interactive. `F-02-javascript-spas_en.pdf`
 
----
 
 # 16. Hybrid approach: CSR with prerendering
 
@@ -498,7 +480,6 @@ Disadvantages:
 - **TTI is delayed**, because the SPA still needs to start up.
 - The initial view must be suitable for static rendering. This can be difficult if the content is highly personalized or changes very often. `F-02-javascript-spas_en.pdf`
 
----
 
 # 17. Rendering approaches comparison
 
@@ -510,13 +491,11 @@ Disadvantages:
 | **SSR** | Server first, browser later | Request time + browser hydration | SPAs needing faster first display | Hydration complexity |
 | **CSR with prerendering** | Build first, browser later | Build time + browser startup | SEO/static initial pages | TTI delayed, initial view must be static |
 
----
 
 # 18. Big mental map of the lecture
 
 > **IMAGE PLACEHOLDER:** SPA lecture mental map
 
----
 
 # 19. Exam-style questions to prepare
 
@@ -552,7 +531,6 @@ Rehydration is the process where JavaScript takes over server-rendered HTML and 
 
 If rehydration fails, the page may look complete but not respond to user interaction.
 
----
 
 # 20. Final one-sentence summary
 
