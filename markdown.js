@@ -3,6 +3,7 @@
 
   Supported:
   - #, ##, ### headings
+  - heading IDs for internal links
   - paragraphs
   - unordered and ordered lists
   - fenced code blocks
@@ -10,7 +11,10 @@
   - blockquotes
   - horizontal rules
   - simple tables
-  - **bold**, *italic*, `inline code`, [links](https://example.com)
+  - **bold**, *italic*, `inline code`
+  - [links](https://example.com)
+  - [internal links](#section-name)
+  - ![images](images/example.png)
   - ==specifically highlighted text==
   - semantic bullets: [+], [!], [>]
 */
@@ -27,6 +31,16 @@
       .replaceAll("'", "&#039;");
   }
 
+  function createHeadingId(text) {
+    return String(text)
+      .replace(/[*_`~]/g, "")
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-");
+  }
+
   function renderInline(source) {
     let text = escapeHtml(source);
 
@@ -39,10 +53,26 @@
     });
 
     text = text
+      // Images: ![alt text](relative-or-absolute-path)
       .replace(
-        /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
-        '<a href="$2" target="_blank" rel="noreferrer">$1</a>'
+        /!\[([^\]]*)\]\(([^)\s]+)\)/g,
+        '<img src="$2" alt="$1" class="md-image">'
       )
+
+      // Links: [label](relative-or-absolute-path)
+      .replace(
+        /\[([^\]]+)\]\(([^)\s]+)\)/g,
+        (match, label, href) => {
+          const isExternal = /^https?:\/\//i.test(href);
+
+          if (isExternal) {
+            return `<a href="${href}" target="_blank" rel="noreferrer">${label}</a>`;
+          }
+
+          return `<a href="${href}">${label}</a>`;
+        }
+      )
+
       .replace(/==(.+?)==/g, '<span class="key-point">$1</span>')
       .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
       .replace(/__([^_]+)__/g, "<strong>$1</strong>")
@@ -68,6 +98,8 @@
     sh: "bash",
     css: "css",
     scss: "scss",
+    html: "html",
+    xml: "xml",
     text: "text",
     txt: "text",
     plain: "text",
@@ -101,6 +133,8 @@
       "function", "if", "in", "local", "readonly", "select", "then", "until",
       "while"
     ]),
+    html: new Set([]),
+    xml: new Set([]),
     json: new Set([])
   };
 
@@ -125,11 +159,35 @@
     return /[A-Za-z0-9_-]/.test(character);
   }
 
+  function highlightHtmlLike(source) {
+    return escapeHtml(source)
+      .replace(
+        /(&lt;\/?)([A-Za-z][\w:-]*)([^&]*?)(\/?&gt;)/g,
+        (_, open, tagName, attributes, close) => {
+          const highlightedAttributes = attributes.replace(
+            /([A-Za-z_:][\w:.-]*)(=)(&quot;.*?&quot;|&#039;.*?&#039;)/g,
+            '<span class="token property">$1</span><span class="token operator">$2</span><span class="token string">$3</span>'
+          );
+
+          return (
+            `<span class="token punctuation">${open}</span>` +
+            `<span class="token keyword">${tagName}</span>` +
+            highlightedAttributes +
+            `<span class="token punctuation">${close}</span>`
+          );
+        }
+      );
+  }
+
   function highlightCode(source, language) {
     const lang = normalizeLanguage(language);
 
     if (lang === "text") {
       return escapeHtml(source);
+    }
+
+    if (lang === "html" || lang === "xml") {
+      return highlightHtmlLike(source);
     }
 
     const keywords = KEYWORDS[lang] || new Set();
@@ -140,14 +198,12 @@
       const character = source[index];
       const next = source[index + 1];
 
-      // Whitespace
       if (/\s/.test(character)) {
         output += character;
         index += 1;
         continue;
       }
 
-      // Multiline comments
       if (character === "/" && next === "*") {
         let end = source.indexOf("*/", index + 2);
         end = end === -1 ? source.length : end + 2;
@@ -156,7 +212,6 @@
         continue;
       }
 
-      // Single-line comments
       if (
         (character === "/" && next === "/") ||
         (character === "#" && ["bash", "graphql"].includes(lang))
@@ -168,7 +223,6 @@
         continue;
       }
 
-      // Strings and template strings
       if (character === '"' || character === "'" || character === "`") {
         const quote = character;
         let end = index + 1;
@@ -195,7 +249,6 @@
         continue;
       }
 
-      // SCSS variables
       if (lang === "scss" && character === "$" && isIdentifierStart(next || "")) {
         let end = index + 2;
 
@@ -208,7 +261,6 @@
         continue;
       }
 
-      // SCSS/CSS at-rules
       if (
         (lang === "scss" || lang === "css") &&
         character === "@" &&
@@ -225,7 +277,6 @@
         continue;
       }
 
-      // Numbers
       const numberMatch = source
         .slice(index)
         .match(/^-?(?:0x[\da-f]+|\d*\.?\d+)(?:e[+-]?\d+)?(?:px|rem|em|vh|vw|%|s|ms)?/i);
@@ -236,7 +287,6 @@
         continue;
       }
 
-      // Identifiers, keywords, booleans, functions and CSS properties
       if (isIdentifierStart(character)) {
         let end = index + 1;
 
@@ -276,7 +326,6 @@
         continue;
       }
 
-      // Operators
       if (/[=+\-*/!<>?:&|]/.test(character)) {
         let end = index + 1;
 
@@ -289,7 +338,6 @@
         continue;
       }
 
-      // Punctuation
       if (/[{}[\]();,.]/.test(character)) {
         output += token("punctuation", character);
         index += 1;
@@ -479,9 +527,11 @@
         flushBlocks();
 
         const level = headingMatch[1].length;
+        const headingText = headingMatch[2].trim();
+        const headingId = createHeadingId(headingText);
 
         html.push(
-          `<h${level}>${renderInline(headingMatch[2])}</h${level}>`
+          `<h${level} id="${escapeHtml(headingId)}">${renderInline(headingText)}</h${level}>`
         );
 
         index += 1;

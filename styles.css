@@ -526,6 +526,13 @@ button {
 }
 
 /* Other content */
+.slide .md-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 16px auto;
+  border-radius: 8px;
+}
 
 .slide blockquote {
   margin-top: 0.85em;
