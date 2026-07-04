@@ -41,6 +41,28 @@
       .replace(/-+/g, "-");
   }
 
+  function normalizeImagePath(src) {
+    const value = String(src || "").trim();
+
+    if (/^(https?:)?\/\//i.test(value) || value.startsWith("data:")) {
+      return value;
+    }
+
+    if (value.startsWith("notes/images/")) {
+      return value;
+    }
+
+    if (value.startsWith("images/")) {
+      return `notes/${value}`;
+    }
+
+    if (value.startsWith("../images/")) {
+      return `notes/${value.replace("../", "")}`;
+    }
+
+    return value;
+  }
+
   function renderInline(source) {
     let text = escapeHtml(source);
 
@@ -56,7 +78,8 @@
       // Images: ![alt text](relative-or-absolute-path)
       .replace(
         /!\[([^\]]*)\]\(([^)\s]+)\)/g,
-        '<img src="$2" alt="$1" class="md-image">'
+        (_, alt, src) =>
+          `<img src="${normalizeImagePath(src)}" alt="${alt}" class="md-image">`
       )
 
       // Links: [label](relative-or-absolute-path)
