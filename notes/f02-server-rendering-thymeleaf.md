@@ -24,7 +24,7 @@ You want to see the page for “Laptop ABC”.
 
 ### Step-by-step process
 
-![Server rendering product page flow diagram](../images/rendering-approach/server-rendering-product-flow.png)
+![Server rendering product page flow diagram](images/rendering-approach/server-rendering-product-flow.png)
 
 ## What exactly happens?
 
