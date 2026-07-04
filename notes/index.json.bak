@@ -60,6 +60,10 @@
         {
           "file": "f01-ajax-additional-questions.md",
           "title": "F01 AJAX — Additional Questions"
+        },
+        {
+          "file": "f02-spa-mental-model.md",
+          "title": "F-02: Single Page Applications"
         }
       ]
     }

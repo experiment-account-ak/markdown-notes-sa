@@ -64,6 +64,10 @@
         {
           "file": "f02-spa-mental-model.md",
           "title": "F-02: Single Page Applications"
+        },
+        {
+          "file": "f02-server-rendering-thymeleaf.md",
+          "title": "Rendering Approach- Server Rendering and Thymeleaf"
         }
       ]
     }
