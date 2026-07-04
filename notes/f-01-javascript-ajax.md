@@ -134,8 +134,6 @@ The application must preserve the letters that the user has already entered acro
 
 For example, after sending `sing`, the newly generated page must still display `sing` in the input field.
 
----
-
 # 3. What did web applications need from desktop applications❓
 
 Desktop applications normally provide:
