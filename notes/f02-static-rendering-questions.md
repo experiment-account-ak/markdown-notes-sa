@@ -569,6 +569,7 @@ That is why static rendering can have fast **TTFB**: dynamic generation is not n
 # Flow diagram
 
 ![Static site generator flow diagram](../images/rendering-approach/static-site-generator-flow.png)
+
 # Key difference from server rendering
 
 With **server rendering**:
