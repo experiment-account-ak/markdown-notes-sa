@@ -2,7 +2,7 @@
 
 [Source chat](https://chatgpt.com/g/g-p-6a295be0712c8191a00e1149bb7206ea-software-architecture-exam-preparation/c/6a49062c-bafc-83eb-ad19-b118011f3599)
 
-## 1. What happens in a real-life static rendering process?
+## 1. What happens in a real-life static rendering process❓
 
 A real-life example of **static rendering** is a **blog article page** or **company website page**, for example:
 
@@ -178,7 +178,7 @@ There is no need for the server to dynamically generate the page at that moment.
 That is why the lecture says **TTFB can be fast**: dynamic generation is no longer necessary. It also says **FCP and TTI can be fast**, as long as the page does not include too much client-side JavaScript. `F-02-javascript-spas_en.pdf`
 # Full process as a diagram
 
-![Static rendering blog article flow diagram](../images/rendering-approach/static-rendering-blog-flow.png)
+![Static rendering blog article flow diagram](/images/rendering-approach/static-rendering-blog-flow.png)
 # Important difference from server rendering
 
 In **server rendering**, the server creates the HTML **when the request arrives**.
@@ -195,7 +195,7 @@ User request → server sends existing HTML file
 ```
 
 So the server does much less work during the actual user request.
-# What happens when the article changes?
+# What happens when the article changes ❓
 
 Suppose the editor changes the article title.
 
@@ -234,7 +234,7 @@ Static rendering = prepare HTML pages before users request them
 
 That is why it can be very fast for blogs, documentation, landing pages, and company websites.
 
-## 2. What does it mean to provide article content to a static site generator?
+## 2. What does it mean to provide article content to a static site generator❓
 
 By **“providing article content”**, I meant:
 
@@ -360,7 +360,7 @@ Static site generator = person who fills the form
 Final HTML = completed form
 ```
 
-## 3. What is a static site generator, and how does it work?
+## 3. What is a static site generator, and how does it work❓
 
 A **static site generator** is a tool that creates ready-made HTML pages **before users visit the website**.
 
@@ -568,7 +568,7 @@ and sends it back.
 That is why static rendering can have fast **TTFB**: dynamic generation is not necessary at request time. The lecture also says FCP and TTI can be fast, as long as there is not too much client-side JavaScript. `F-02-javascript-spas_en.pdf`
 # Flow diagram
 
-![Static site generator flow diagram](../images/rendering-approach/static-site-generator-flow.png)
+![Static site generator flow diagram](/images/rendering-approach/static-site-generator-flow.png)
 
 # Key difference from server rendering
 
