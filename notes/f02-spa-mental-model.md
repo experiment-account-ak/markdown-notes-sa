@@ -8,7 +8,7 @@ A **Single Page Application (SPA)** is best understood as:
 
 In a classic website, every major user action often asks the server for a **new HTML page**. In an SPA, the browser first downloads the app, usually one HTML page plus lots of JavaScript/CSS/images. After that, the page is **not reloaded**. Instead, JavaScript changes the visible page by manipulating the **DOM**, and the server is contacted mainly for **data** or **business logic**, often asynchronously via AJAX. This is the central idea of the lecture. `F-02-javascript-spas_en.pdf`
 
-# 1. What is an SPA?
+# 1. What is an SPA❓
 
 The lecture defines an SPA as an application delivered to the browser that **does not reload the page during use**. `F-02-javascript-spas_en.pdf`
 
@@ -22,7 +22,7 @@ Think of it like this:
 
 A simple example is **Google Docs**. When you type in a document, the whole page does not reload. The browser updates the document area, toolbar state, cursor position, etc., while background communication with the server saves or syncs data.
 
-# 2. Why do SPAs exist?
+# 2. Why do SPAs exist❓
 
 The lecture gives three main goals:
 
@@ -35,7 +35,7 @@ The lecture gives three main goals:
 3. **Offline capability, especially for mobile use**  
    Since much of the application is already on the client, parts of the app may continue working without constant server communication. `F-02-javascript-spas_en.pdf`
 
-# 3. SPA request flow: what happens step by step?
+# 3. SPA request flow: what happens step by step❓
 
 The diagrams on pages 4-6 show the core SPA flow.
 
@@ -67,7 +67,7 @@ The key idea is: **the page stays alive; only parts of it change.**
 
 > **IMAGE PLACEHOLDER:** SPA request flow sequence diagram
 
-# 4. Exam question: What are the main features of an SPA?
+# 4. Exam question: What are the main features of an SPA❓
 
 The lecture lists three important SPA features:
 
@@ -183,7 +183,7 @@ Search engines may have difficulty with JavaScript-heavy applications if they ca
 
 The lecture humorously lists JavaScript as a challenge. The point is that larger JavaScript applications can become complex and need structure. `F-02-javascript-spas_en.pdf`
 
-# 8. Exam question: Why is a pure SPA not always the right choice?
+# 8. Exam question: Why is a pure SPA not always the right choice❓
 
 A pure SPA uses **client-side rendering**: the browser receives a minimal page plus JavaScript, then JavaScript builds the UI.
 
@@ -482,35 +482,35 @@ Disadvantages:
 
 # 19. Exam-style questions to prepare
 
-## What is a Single Page Application?
+## What is a Single Page Application❓
 
 An SPA is a browser-delivered application that does not reload the page during normal use. It updates the view using JavaScript and DOM manipulation.
 
-## What happens during the initial load of an SPA?
+## What happens during the initial load of an SPA❓
 
 The browser downloads the application resources: HTML, JavaScript, CSS, images, and other required files.
 
-## What happens after the initial load?
+## What happens after the initial load❓
 
 The browser handles user actions with JavaScript, communicates with the server mainly for data or business logic, and updates the DOM without reloading the page.
 
-## Why is the SPA client called a rich or fat client?
+## Why is the SPA client called a rich or fat client❓
 
 Because many tasks that were traditionally done on the server move to the browser, such as presentation logic, HTML generation, and state management.
 
-## What are TTFB, FCP, and TTI?
+## What are TTFB, FCP, and TTI❓
 
 TTFB measures when the first response byte arrives. FCP measures when the first content appears. TTI measures when the page becomes interactive.
 
-## What is the difference between CSR and SSR?
+## What is the difference between CSR and SSR❓
 
 CSR renders the view in the browser after JavaScript loads. SSR pre-renders the initial view on the server, sends HTML to the browser, and then JavaScript rehydrates it.
 
-## What is rehydration?
+## What is rehydration❓
 
 Rehydration is the process where JavaScript takes over server-rendered HTML and makes it interactive.
 
-## Why can SSR be risky?
+## Why can SSR be risky❓
 
 If rehydration fails, the page may look complete but not respond to user interaction.
 

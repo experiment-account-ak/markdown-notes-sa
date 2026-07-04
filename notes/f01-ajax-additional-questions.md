@@ -2,7 +2,7 @@
 
 [Source chat](https://chatgpt.com/g/g-p-6a295be0712c8191a00e1149bb7206ea/c/6a465343-9ef0-83eb-b90d-63fa20b79044)
 
-## 1. What is `index.html`?
+## 1. What is `index.html`❓
 
 `index.html` is the **main web page file** that the browser opens first.
 
@@ -90,7 +90,7 @@ may automatically load:
 http://localhost/index.html
 ```
 
-## 2. What does “thin client” mean in an MPA, and how does the flow work?
+## 2. What does “thin client” mean in an MPA, and how does the flow work❓
 
 ## What does **thin client** mean?
 
@@ -178,7 +178,7 @@ Because the client’s responsibility is **small/thin**:
 
 A thin client is not “bad.” It just means the browser is not doing much application logic. In classic MPAs, the intelligence of the application mostly lives on the server.
 
-## 3. How should the MPA distribution scenario diagram be understood?
+## 3. How should the MPA distribution scenario diagram be understood❓
 
 > **IMAGE PLACEHOLDER:** MPA distribution scenario diagram
 
@@ -259,7 +259,7 @@ In this diagram, the **Persistence Layer is also on the server**.
 
 The browser does not directly talk to the database.
 
-## 3. Why is only the left side highlighted?
+## 3. Why is only the left side highlighted❓
 
 The diagram shows many possible ways to distribute an application between client and server.
 
@@ -285,7 +285,7 @@ Persistence Layer
 
 So the server is doing most of the application work.
 
-## 4. What does “Distributed GUI” mean here?
+## 4. What does “Distributed GUI” mean here❓
 
 “GUI” means **Graphical User Interface**.
 
@@ -318,8 +318,7 @@ Then the browser receives this HTML and renders it visually.
 
 So the UI is not only on the browser. Part of the UI work is already done by the server.
 
-
-## 5. What happens in an MPA request?
+## 5. What happens in an MPA request❓
 
 The flow is:
 
