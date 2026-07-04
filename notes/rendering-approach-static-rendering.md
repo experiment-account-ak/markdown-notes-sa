@@ -176,9 +176,11 @@ The browser receives complete HTML and displays it.
 There is no need for the server to dynamically generate the page at that moment.
 
 That is why the lecture says **TTFB can be fast**: dynamic generation is no longer necessary. It also says **FCP and TTI can be fast**, as long as the page does not include too much client-side JavaScript. `F-02-javascript-spas_en.pdf`
+
 # Full process as a diagram
 
 ![Static rendering blog article flow diagram](images/rendering-approach/static-rendering-blog-flow.png)
+
 # Important difference from server rendering
 
 In **server rendering**, the server creates the HTML **when the request arrives**.
