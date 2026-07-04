@@ -68,6 +68,10 @@
         {
           "file": "f02-server-rendering-thymeleaf.md",
           "title": "Rendering Approach- Server Rendering and Thymeleaf"
+        },
+        {
+          "file": "f02-static-rendering-questions.md",
+          "title": "F02— Static Rendering"
         }
       ]
     }
