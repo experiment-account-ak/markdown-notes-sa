@@ -115,8 +115,6 @@ The server mainly does:
 Understand request → choose page → run logic → get data → create HTML → send response
 ```
 
----
-
 ## Simple example
 
 Suppose the user clicks:
@@ -137,8 +135,6 @@ In a classic MPA:
 
 The browser does **not** decide how to build the todo list.  
 It just receives the final HTML and renders it.
-
----
 
 ## Flowchart: thin client in an MPA
 
@@ -164,13 +160,9 @@ Browser reloads page
 Browser renders HTML
 ```
 
----
-
 ## PlantUML flow diagram
 
 > **IMAGE PLACEHOLDER:** Thin client in an MPA flow diagram
-
----
 
 ## Why is it called “thin”?
 
@@ -205,8 +197,6 @@ So the top half is the **client**, meaning mainly the browser.
 
 The bottom half is the **server**, meaning the backend application plus database/service access.
 
----
-
 ## 2. The three layers in the boxes
 
 The diagram uses three common application layers.
@@ -234,8 +224,6 @@ In an MPA, the presentation layer is split:
 
 That is why you see a **Presentation Layer box on both client and server**.
 
----
-
 ### Business Logic Layer
 
 This contains the actual rules of the application.
@@ -252,8 +240,6 @@ What happens when an order is submitted?
 In this diagram, the **Business Logic Layer is on the server**.
 
 The browser does not decide the important rules.
-
----
 
 ### Persistence Layer
 
@@ -272,8 +258,6 @@ writing bookings
 In this diagram, the **Persistence Layer is also on the server**.
 
 The browser does not directly talk to the database.
-
----
 
 ## 3. Why is only the left side highlighted?
 
@@ -300,8 +284,6 @@ Persistence Layer
 ```
 
 So the server is doing most of the application work.
-
----
 
 ## 4. What does “Distributed GUI” mean here?
 
@@ -336,8 +318,6 @@ Then the browser receives this HTML and renders it visually.
 
 So the UI is not only on the browser. Part of the UI work is already done by the server.
 
----
-
 ## 5. What happens in an MPA request?
 
 The flow is:
@@ -362,13 +342,9 @@ Browser renders the page
 
 This matches the MPA property from the lecture: user actions cause client-server communication and page reloads. `F-01-javascript-ajax_en.pdf`
 
----
-
 ## 6. PlantUML flowchart
 
 > **IMAGE PLACEHOLDER:** MPA thin-client distribution flowchart
-
----
 
 ## 7. The key meaning of the diagram
 
