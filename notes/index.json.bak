@@ -58,8 +58,8 @@
           "title": "F-01: Javascript AJAX"
         },
         {
-          "file": "f01-ajax-additional-questions.md",
-          "title": "F01 AJAX — Additional Questions"
+          "file": "f-01-ajax-additional-questions.md",
+          "title": "F-01: AJAX - Additional Questions"
         },
         {
           "file": "f02-spa-mental-model.md",

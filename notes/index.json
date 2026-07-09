@@ -84,6 +84,10 @@
         {
           "file": "f03-javascript-modularization.md",
           "title": "F-03: Javascript Modularization"
+        },
+        {
+          "file": "architecture-scenario-based-questions.md",
+          "title": "Architecture Scenario-Based Questions"
         }
       ]
     }
