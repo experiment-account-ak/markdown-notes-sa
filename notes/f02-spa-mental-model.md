@@ -38,6 +38,7 @@ The lecture gives three main goals:
 # 3. SPA request flow: what happens step by step❓
 
 The diagrams on pages 4-6 show the core SPA flow.
+![SPA Request Flow](images/spa/spa.png)
 
 ## Initial load
 
@@ -86,6 +87,7 @@ The lecture lists three important SPA features:
 # 5. MPA vs SPA: distribution of tasks
 
 The diagram on page 9 compares **MPA** and **SPA** task distribution.
+![SPA-DISTRIBUTION OF TASKS](images/spa/spa-distribution-of-task.png)
 
 In an **MPA**, the browser mostly renders HTML. The server does more work:
 
@@ -113,10 +115,6 @@ The server still commonly keeps important backend responsibilities:
 - access to external services.
 
 This is why the lecture says SPAs use a **rich client** or **fat client**. The browser is no longer just a passive HTML display tool; it becomes an active application runtime. `F-02-javascript-spas_en.pdf`
-
-### PlantUML component diagram
-
-> **IMAGE PLACEHOLDER:** MPA vs SPA task distribution component diagram
 
 # 6. Important term: Rich client / fat client
 
@@ -254,7 +252,7 @@ Disadvantage:
 
 ### Simple flow
 
-> **IMAGE PLACEHOLDER:** Server rendering simple flow diagram
+![Server rendering rendering flow diagram](images/spa/server-rendering.png)
 
 # 12. Static rendering
 
@@ -304,7 +302,8 @@ The server does not send the final full HTML view. The browser builds the view a
 
 ### CSR flow
 
-> **IMAGE PLACEHOLDER:** Client-side rendering flow diagram
+![Client-side rendering flow diagram](images/spa/csr.png)
+
 
 CSR has the SPA advantages already discussed, but also the initial-load and SEO challenges. `F-02-javascript-spas_en.pdf`
 
@@ -478,7 +477,7 @@ Disadvantages:
 
 # 18. Big mental map of the lecture
 
-> **IMAGE PLACEHOLDER:** SPA lecture mental map
+![SPA lecture mental map](images/spa/mental-map.png)
 
 # 19. Exam-style questions to prepare
 

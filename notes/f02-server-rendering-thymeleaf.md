@@ -1,5 +1,7 @@
 # F02 SPA — Server Rendering and Thymeleaf Questions
 
+![Server rendering](images/rendering-approach/server-rendering-annotated.png)
+
 [Source chat](https://chatgpt.com/g/g-p-6a295be0712c8191a00e1149bb7206ea-software-architecture-exam-preparation/c/6a49062c-bafc-83eb-ad19-b118011f3599)
 
 ## 1. What happens in a real-life server rendering process?

@@ -1,17 +1,30 @@
 {
   "sections": [
     {
-      "title": "GraphQL Notes",
+      "title": "Advanced Web Engineering — Notes Index",
       "files": [
         {
-          "file": "trial.md",
-          "title": "Trial"
+          "file": "course-notes-index.md",
+          "title": "Advanced Web Engineering — Notes Index"
         }
       ]
     },
     {
-      "title": "GraphQL Mutations",
-      "files": []
+      "title": "C - CSS_ Scalability and Maintainability",
+      "files": [
+        {
+          "file": "c-01-css-maintainability-preprocessors.md",
+          "title": "c-01-css-maintainability-preprocessors"
+        },
+        {
+          "file": "c-02-css-maintainability-bem.md",
+          "title": "C-02 - CSS Scalability and Maintainability: BEM"
+        },
+        {
+          "file": "css-sass-bem-revision.md",
+          "title": "CSS Sass & BEM Revision"
+        }
+      ]
     },
     {
       "title": "Lecture: E04-E06 GraphQL",
@@ -20,21 +33,6 @@
         "e05-graphql-schema.md",
         "e06-graphql-requests.md",
         "complete-graphql-example.md"
-      ]
-    },
-    {
-      "title": "GraphQL Types",
-      "files": []
-    },
-    {
-      "title": "GRAPHQL Linkedin",
-      "files": [
-        "graphql-mutation-explanation.md",
-        "graphql-mutations-create-update-delete.md",
-        {
-          "file": "graphql-types-scalars-enums-lists.md",
-          "title": "GraphQL Types: Scalars, Enums, Lists, and Non-Null"
-        }
       ]
     },
     {
@@ -60,6 +58,10 @@
         {
           "file": "f-01-ajax-additional-questions.md",
           "title": "F-01: AJAX - Additional Questions"
+        },
+        {
+          "file": "ajax-xmlhttprequest-message-sequence.md",
+          "title": "AJAX Lecture Summary"
         },
         {
           "file": "f02-spa-mental-model.md",
@@ -88,6 +90,79 @@
         {
           "file": "architecture-scenario-based-questions.md",
           "title": "Architecture Scenario-Based Questions"
+        }
+      ]
+    },
+    {
+      "title": "G-01-G-10 vuejs",
+      "files": [
+        {
+          "file": "g-01-vuejs-introduction.md",
+          "title": "G-01-vuejs-introduction"
+        },
+        {
+          "file": "g-02-vuejs-mvvm.md",
+          "title": "G-02-vuejs-mvvm"
+        },
+        {
+          "file": "vuejs-template-overview-clean.md",
+          "title": "G-03-vuejs-templates"
+        },
+        {
+          "file": "g-04-vuejs-application-component-instances.md",
+          "title": "G-04-vuejs-application-component-instances"
+        },
+        {
+          "file": "g-05-vuejs-components-overview.md",
+          "title": "G-05-vuejs-components-overview"
+        },
+        {
+          "file": "vuejs-single-file-components.md",
+          "title": "G-06 - Vue.js Single File Components"
+        },
+        {
+          "file": "g-07-vuejs-routing.md",
+          "title": "G-07-vuejs-routing"
+        },
+        {
+          "file": "g-08-vuejs-virtual-dom.md",
+          "title": "G-08 - Vue.js Virtual DOM"
+        },
+        {
+          "file": "g-09-vuejs-state-management.md",
+          "title": "G-09-vuejs-state-management"
+        },
+        {
+          "file": "g-10-vuejs-web-components.md",
+          "title": "G-10-vuejs-web-components"
+        }
+      ]
+    },
+    {
+      "title": "GraphQL Notes",
+      "files": [
+        {
+          "file": "trial.md",
+          "title": "Trial"
+        }
+      ]
+    },
+    {
+      "title": "GraphQL Mutations",
+      "files": []
+    },
+    {
+      "title": "GraphQL Types",
+      "files": []
+    },
+    {
+      "title": "GRAPHQL Linkedin",
+      "files": [
+        "graphql-mutation-explanation.md",
+        "graphql-mutations-create-update-delete.md",
+        {
+          "file": "graphql-types-scalars-enums-lists.md",
+          "title": "GraphQL Types: Scalars, Enums, Lists, and Non-Null"
         }
       ]
     }

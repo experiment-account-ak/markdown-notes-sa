@@ -163,6 +163,7 @@ Browser renders HTML
 ## PlantUML flow diagram
 
 > **IMAGE PLACEHOLDER:** Thin client in an MPA flow diagram
+![Thin client in an MPA flow diagram](images/ajax/thin-client.png)
 
 ## Why is it called “thin”?
 
@@ -180,7 +181,7 @@ A thin client is not “bad.” It just means the browser is not doing much appl
 
 ## 3. How should the MPA distribution scenario diagram be understood❓
 
-> **IMAGE PLACEHOLDER:** MPA distribution scenario diagram
+![MPA distribution scenario diagram](images/ajax/mpa-distribution-digram.png)
 
 This diagram explains **where the different parts of a web application live: on the client/browser or on the server**.
 
@@ -346,7 +347,7 @@ This matches the MPA property from the lecture: user actions cause client-server
 ## 6. PlantUML flowchart
 
 > **IMAGE PLACEHOLDER:** MPA thin-client distribution flowchart
-
+![MPA thin-client distribution flowchart](images/ajax/classic-mpa-thin-client-request-flow.png)
 
 ## 7. The key meaning of the diagram
 
@@ -368,3 +369,7 @@ So:
 The most important exam sentence:
 
 > A classic MPA is a **thin-client architecture** because the client mainly renders HTML, while presentation generation, business logic, state management, and persistence access are mostly handled on the server.
+
+## 8. MPA vs. MPA+AJAX
+
+![MPA vs MPA + AJAX](images/ajax/mpa-vs-mpa-ajax.png)
