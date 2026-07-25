@@ -55,7 +55,7 @@ A traditional web application that works mainly by loading new HTML pages is cal
 
 ## MPA basic principle
 
-> **IMAGE PLACEHOLDER:** MPA basic request-response cycle
+![MPA basic request-response cycle](images/ajax/mpa-basic-request-response.png)
 
 The sequence diagram on page 6 shows:
 
@@ -103,6 +103,7 @@ The distribution diagram on pages 8-9 therefore describes the browser as a **thi
 # 2. Why is the classic MPA cycle problematic for interactive components ❓
 
 ## What would happen if autocomplete were implemented as a classic MPA interaction❓
+![EXAMPLE](images/ajax/classic-mpa-mental-model.png)
 
 Consider a search suggestion list that should update after every typed letter.
 
@@ -151,6 +152,7 @@ To provide a similar experience in a browser, two capabilities are required:
 AJAX provides this combination.
 
 # 4. What is AJAX❓
+![AJAX Mental Model](images/ajax/ajax-mental-model.png)
 
 **AJAX** stands for:
 
@@ -178,10 +180,10 @@ The name includes XML for historical reasons, but AJAX is **not restricted to XM
 
 # 5. How does an AJAX interaction work❓
 
-> **IMAGE PLACEHOLDER:** AJAX request, JSON response and DOM update
+![EXAMPLE](images/ajax/classic-mpa-mental-model.png)
 
 The diagrams on pages 14-16 build the process gradually.
-
+![Page 14-16](images/ajax/web-applications-with-ajax.png)
 ## Initial page load
 
 The initial page is still loaded normally:
@@ -246,9 +248,6 @@ It also defines an API that JavaScript can use to:
 ```
 
 ## DOM tree
-
-> **IMAGE PLACEHOLDER:** HTML document represented as a DOM tree
-
 The DOM is a tree because elements are nested inside other elements:
 
 ```text
@@ -852,8 +851,7 @@ The server can return only the required data, such as JSON, rather than repeated
 
 # 17. How does AJAX change the distribution of tasks❓
 
-> **IMAGE PLACEHOLDER:** Comparison of MPA and MPA with AJAX
-
+![Comparison of MPA and MPA with AJAX](images/ajax/mpa-vs-mpa-ajax.png)
 ## Traditional MPA
 
 The client mainly performs:
