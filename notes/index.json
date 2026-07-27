@@ -32,7 +32,11 @@
         "e04-graphql-introduction.md",
         "e05-graphql-schema.md",
         "e06-graphql-requests.md",
-        "complete-graphql-example.md"
+        "complete-graphql-example.md",
+        {
+          "file": "e01-e03-e07.md",
+          "title": "E01, E03, E07"
+        }
       ]
     },
     {
@@ -90,6 +94,14 @@
         {
           "file": "architecture-scenario-based-questions.md",
           "title": "Architecture Scenario-Based Questions"
+        },
+        {
+          "file": "web-architecture-scenario-questions.md",
+          "title": "Web Architecture Scenario Questions and Answers"
+        },
+        {
+          "file": "rendering-approaches-comparison.md",
+          "title": "Rendering Approaches Comparison"
         }
       ]
     },
@@ -163,6 +175,23 @@
         {
           "file": "graphql-types-scalars-enums-lists.md",
           "title": "GraphQL Types: Scalars, Enums, Lists, and Non-Null"
+        }
+      ]
+    },
+    {
+      "title": "Web Architecture Lecture Scenario Questions and Answers",
+      "files": [
+        {
+          "file": "web-architecture-lecture-scenarios-1.md",
+          "title": "Web Architecture Lecture Scenario Questions and Answers - part 1"
+        },
+        {
+          "file": "web-architecture-detailed-questions-answers.md",
+          "title": "Web Architecture Scenario Questions and Answers — Detailed"
+        },
+        {
+          "file": "web-architecture-questions-answers-2.md",
+          "title": "Web Architecture Scenario Questions and Answers -part 2"
         }
       ]
     }
