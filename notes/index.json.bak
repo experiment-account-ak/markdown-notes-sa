@@ -98,6 +98,10 @@
         {
           "file": "web-architecture-scenario-questions.md",
           "title": "Web Architecture Scenario Questions and Answers"
+        },
+        {
+          "file": "rendering-approaches-comparison.md",
+          "title": "Rendering Approaches Comparison"
         }
       ]
     },
