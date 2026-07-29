@@ -203,6 +203,15 @@
           "title": "API Migration"
         }
       ]
+    },
+    {
+      "title": "Flux and State Management",
+      "files": [
+        {
+          "file": "flux-state-management-clean.md",
+          "title": "Flux and State Management"
+        }
+      ]
     }
   ]
 }

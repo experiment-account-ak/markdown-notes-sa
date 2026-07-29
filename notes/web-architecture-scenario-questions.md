@@ -345,61 +345,71 @@ Here are the straightforward answers to your architectural scenario questions, b
 A landing page must be visible to search engine crawlers, but the main application is still implemented as a SPA.
 
 Which architecture should be chosen❓
-
+**Answer:** **Hybrid Approach: CSR with Prerendering.**
+Pre-rendering generates static HTML for specific routes (like the landing page) during the build process so crawlers can easily index it, while the rest of the application functions as a standard Client-Side Rendered SPA.
 ## Question 12
 
 An online game has highly interactive personalized state. The content changes constantly during use.
 
 Which architecture should NOT be chosen❓
-
+**Answer:** **Static rendering.**
+Static rendering relies on pre-generating views at build time. It is completely unsuitable for highly interactive, personalized applications where state and content change constantly during runtime.
 ## Question 13
 
 A restaurant menu website has only fixed pages: menu, opening hours, address, and gallery. The owner wants the fastest possible delivery and minimal backend complexity.
 
 Which architecture should be chosen❓
-
+**Answer:** **Static rendering.**
+Because the content is fixed and the owner wants the fastest possible delivery (Time to First Byte) with minimal backend complexity, pre-building the HTML files is the perfect choice.
 ## Question 14
 
 A shopping website wants every category page to be generated with the newest prices and stock status on every request. The page should work with minimal JavaScript.
 
 Which architecture should be chosen❓
-
+**Answer:** **Server rendering (Classic MPA).**
+Server rendering dynamically generates the HTML on the server the moment the request is made, ensuring absolute real-time data (prices/stock). Delivering a fully formed HTML document means the page works perfectly with minimal or no JavaScript.
 ## Question 15
 
 A team says: ‘We want a beautiful modern UI.’ Which architecture should we choose❓
 
 What is the correct exam answer❓
-
+**Answer:** **Architecture does not dictate aesthetics.**
+The correct exam answer is that "beautiful modern UI" is a matter of CSS, design systems, and frontend frameworks, not the underlying rendering architecture. Any architecture (MPA, SPA, SSR, Static) can have a beautiful, modern UI.
 ## Question 16
 
 A website has many pages, but users only click links and read content. There is no need for live updates, filters, offline mode, or complex client-side state.
 
 Which architecture should be chosen❓
-
+**Answer:** **Classic Web Application (MPA / Server Rendering or Static Rendering).**
+Since there is no need for complex client-side state, live updates, or offline capability, a classic multi-page approach where users simply navigate via links is the most straightforward and appropriate choice.
 ## Question 17
 
 A project already uses an MPA, but adding small dynamic features has caused presentation logic and HTML generation to be split between client and server. What architecture problem is this❓
 
 What is the answer❓
-
+**Answer:** **Duplication (or scattering) of presentation logic.**
+When an MPA is enhanced with ad-hoc AJAX and DOM manipulation, developers often end up writing rendering logic twice: once on the server (e.g., in PHP/Java templates) for the initial load, and once on the client (in JavaScript) for dynamic updates.
 ## Question 18
 
 An application must reduce server work and use the user’s device for more processing. The app is used for long sessions and requires frequent UI updates.
 
 Which architecture should be chosen❓
-
+**Answer:** **Single Page Application (SPA) / Client-Side Rendering (CSR).**
+SPAs act as fat/rich clients. By downloading the application logic to the browser, the user's device handles the processing and UI updates locally, which is ideal for long sessions and drastically reduces server load.
 ## Question 19
 
 A manager says: ‘Optimize TTFB, FCP, and TTI equally for every page.’ Is this correct❓
 
 What is the answer❓
-
+**Answer:** **No, this is incorrect (Web Architecture is about trade-offs).**
+You cannot simultaneously optimize Time to First Byte (TTFB), First Contentful Paint (FCP), and Time to Interactive (TTI) perfectly on every architecture. For example, a pure SPA has excellent subsequent load times but a poor initial FCP; SSR has a great FCP but a delayed TTI due to rehydration.
 ## Question 20
 
 A site needs fast FCP, fast TTFB, and content is stable. Which rendering approach is best❓
 
 Which architecture should be chosen❓
-
+**Answer:** **Static rendering.**
+If the content is stable, generating it at build time and serving it via a CDN guarantees the fastest possible TTFB and FCP.
 ## Question 21
 
 A university department wants a website with pages such as:
@@ -413,110 +423,59 @@ News
 `​`​`
 
 The pages mostly contain text, images, and links. Content changes only occasionally. The website should load very quickly and should not require complex server processing for every visitor.
-
+**Answer:** **Static rendering.**
+The content (text, images, links) changes only occasionally, and the requirement is extremely fast loading with no complex server processing.
 ## Question 22
 
 A government website provides forms for address changes, appointments, and information requests. It must work reliably on many browsers, including older ones. JavaScript should not be required for the basic functionality.
-
+**Answer:** **Server rendering (Classic MPA).**
+Government sites must be highly accessible. Server rendering builds the forms and responses entirely on the server, ensuring full functionality across all browsers even if JavaScript is disabled or fails to execute.
 ## Question 23
 
 A company already has a normal website. On the product search page, users should see suggestions while typing, like Google search autocomplete. The rest of the website can continue working normally with page reloads.
-
+**Answer:** **MPA with AJAX.**
+The site remains a classic Multi-Page Application, but the specific search input is enhanced with AJAX to fetch suggestions asynchronously without reloading the page.
 ## Question 24
 
 A web application allows users to write and edit documents for a long time. Formatting buttons, cursor movement, typing, comments, and saving should feel immediate. The page should not reload while the user is working.
-
+**Answer:** **Single Page Application (SPA) / Client-Side Rendering (CSR).**
+This requires desktop-like interactivity, immediate feedback, and long-lived client state without server interruptions.
 ## Question 25
 
 A banking dashboard shows account balances, recent transactions, charts, filters, and personalized user data. It is only visible after login. Search engine visibility is not important.
-
+**Answer:** **Single Page Application (SPA) / Client-Side Rendering (CSR).**
+Because the data is highly personalized, interactive, and completely behind a login wall (making SEO irrelevant), fetching data asynchronously into a client-side shell is optimal.
 ## Question 26
 
 A news site wants articles to appear very quickly when opened. Search engines should easily understand the article content. Users mostly read articles and click links.
-
+**Answer:** **Static rendering (or Server rendering with heavy caching).**
+For a news site where initial load speed and SEO are the absolute top priorities, delivering pre-generated HTML ensures search engines can read it immediately and users see the article instantly.
 ## Question 27
 
 An online shop wants product pages to show product name, image, price, and description immediately. Search engines should read the product content. After loading, users should click “Add to cart”, change quantity, and open reviews without full page reloads.
-
+**Answer:** **Hybrid Approach: Server-Side Rendering (SSR).**
+SSR generates the initial product view on the server for immediate display and SEO indexing. After the initial load, the JavaScript rehydrates the page, turning it into an SPA to handle the cart and reviews without full page reloads.
 ## Question 28
 
 A marketing landing page has mostly fixed content: hero section, product features, pricing, testimonials, and contact section. It also has some visual animations, but no complex user state.
-
+**Answer:** **Static rendering.**
+The content is mostly fixed and visual animations are handled by CSS/JS on the client. Generating this statically provides the best speed and SEO for a marketing page.
 ## Question 29
 
 A restaurant web app lets customers browse menu categories, customize meals, add items to a basket, edit quantities, and place an order. The user should not wait for a full page reload after every small action.
-
+**Answer:** **Single Page Application (SPA) / Client-Side Rendering (CSR).**
+The user is navigating a complex flow (customizing meals, managing a cart) that requires constant state updates. Doing this locally in the browser provides a smooth, application-like experience.
 ## Question 30
 
 A software project wants documentation pages: installation guide, API guide, tutorials, FAQ, and examples. The content changes when the project releases a new version. Users mostly read and navigate.
-
-Here are the answers to your scenario-based exam questions based on web architecture principles and trade-offs:
-
-### **Question 11**
-**Answer:** **Hybrid Approach: CSR with Prerendering.**
-Pre-rendering generates static HTML for specific routes (like the landing page) during the build process so crawlers can easily index it, while the rest of the application functions as a standard Client-Side Rendered SPA.
-### **Question 12**
-**Answer:** **Static rendering.**
-Static rendering relies on pre-generating views at build time. It is completely unsuitable for highly interactive, personalized applications where state and content change constantly during runtime.
-### **Question 13**
-**Answer:** **Static rendering.**
-Because the content is fixed and the owner wants the fastest possible delivery (Time to First Byte) with minimal backend complexity, pre-building the HTML files is the perfect choice.
-### **Question 14**
-**Answer:** **Server rendering (Classic MPA).**
-Server rendering dynamically generates the HTML on the server the moment the request is made, ensuring absolute real-time data (prices/stock). Delivering a fully formed HTML document means the page works perfectly with minimal or no JavaScript.
-### **Question 15**
-**Answer:** **Architecture does not dictate aesthetics.**
-The correct exam answer is that "beautiful modern UI" is a matter of CSS, design systems, and frontend frameworks, not the underlying rendering architecture. Any architecture (MPA, SPA, SSR, Static) can have a beautiful, modern UI.
-### **Question 16**
-**Answer:** **Classic Web Application (MPA / Server Rendering or Static Rendering).**
-Since there is no need for complex client-side state, live updates, or offline capability, a classic multi-page approach where users simply navigate via links is the most straightforward and appropriate choice.
-### **Question 17**
-**Answer:** **Duplication (or scattering) of presentation logic.**
-When an MPA is enhanced with ad-hoc AJAX and DOM manipulation, developers often end up writing rendering logic twice: once on the server (e.g., in PHP/Java templates) for the initial load, and once on the client (in JavaScript) for dynamic updates.
-### **Question 18**
-**Answer:** **Single Page Application (SPA) / Client-Side Rendering (CSR).**
-SPAs act as fat/rich clients. By downloading the application logic to the browser, the user's device handles the processing and UI updates locally, which is ideal for long sessions and drastically reduces server load.
-### **Question 19**
-**Answer:** **No, this is incorrect (Web Architecture is about trade-offs).**
-You cannot simultaneously optimize Time to First Byte (TTFB), First Contentful Paint (FCP), and Time to Interactive (TTI) perfectly on every architecture. For example, a pure SPA has excellent subsequent load times but a poor initial FCP; SSR has a great FCP but a delayed TTI due to rehydration.
-### **Question 20**
-**Answer:** **Static rendering.**
-If the content is stable, generating it at build time and serving it via a CDN guarantees the fastest possible TTFB and FCP.
-### **Question 21**
-**Answer:** **Static rendering.**
-The content (text, images, links) changes only occasionally, and the requirement is extremely fast loading with no complex server processing.
-### **Question 22**
-**Answer:** **Server rendering (Classic MPA).**
-Government sites must be highly accessible. Server rendering builds the forms and responses entirely on the server, ensuring full functionality across all browsers even if JavaScript is disabled or fails to execute.
-### **Question 23**
-**Answer:** **MPA with AJAX.**
-The site remains a classic Multi-Page Application, but the specific search input is enhanced with AJAX to fetch suggestions asynchronously without reloading the page.
-### **Question 24**
-**Answer:** **Single Page Application (SPA) / Client-Side Rendering (CSR).**
-This requires desktop-like interactivity, immediate feedback, and long-lived client state without server interruptions.
-### **Question 25**
-**Answer:** **Single Page Application (SPA) / Client-Side Rendering (CSR).**
-Because the data is highly personalized, interactive, and completely behind a login wall (making SEO irrelevant), fetching data asynchronously into a client-side shell is optimal.
-### **Question 26**
-**Answer:** **Static rendering (or Server rendering with heavy caching).**
-For a news site where initial load speed and SEO are the absolute top priorities, delivering pre-generated HTML ensures search engines can read it immediately and users see the article instantly.
-### **Question 27**
-**Answer:** **Hybrid Approach: Server-Side Rendering (SSR).**
-SSR generates the initial product view on the server for immediate display and SEO indexing. After the initial load, the JavaScript rehydrates the page, turning it into an SPA to handle the cart and reviews without full page reloads.
-### **Question 28**
-**Answer:** **Static rendering.**
-The content is mostly fixed and visual animations are handled by CSS/JS on the client. Generating this statically provides the best speed and SEO for a marketing page.
-### **Question 29**
-**Answer:** **Single Page Application (SPA) / Client-Side Rendering (CSR).**
-The user is navigating a complex flow (customizing meals, managing a cart) that requires constant state updates. Doing this locally in the browser provides a smooth, application-like experience.
-### **Question 30**
 **Answer:** **Static rendering.**
 Documentation is fundamentally stable content that only changes on new releases (which naturally triggers a new build). Static rendering provides fast, easily indexable text pages.
 
 ## Question 31
 
 A weather website has normal pages, but one section should refresh the current weather when the user clicks “Update”. The whole page should not reload for this small update.
-
+**Answer:** **MPA with AJAX.**
+The website consists of normal pages, but using AJAX allows a specific section (the weather data) to fetch new data asynchronously and update the DOM locally without forcing a full page reload.
 ## Question 32
 
 A public website looks fine in the browser, but search engines do not index the important content well because most content appears only after JavaScript runs.
@@ -594,8 +553,7 @@ A website reloads the entire page whenever the user changes a filter in a produc
 After login, each user sees a unique dashboard with notifications, tasks, recommendations, and messages. Public search engines never see this page.
 
 ### **Question 31**
-**Answer:** **MPA with AJAX.**
-The website consists of normal pages, but using AJAX allows a specific section (the weather data) to fetch new data asynchronously and update the DOM locally without forcing a full page reload.
+
 ### **Question 32**
 **Answer:** **Hybrid Approach: CSR with Prerendering** (or **SSR**).
 The current site is suffering from the classic SEO drawback of a pure Single Page Application (CSR), where crawlers see an empty shell. Pre-rendering generates static HTML for those important pages during the build process, feeding search engines immediately readable content while the rest of the site functions as an SPA.
